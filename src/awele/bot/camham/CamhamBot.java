@@ -1,10 +1,9 @@
 package awele.bot.camham;
 
-import awele.bot.DemoBot;
+import awele.bot.CompetitorBot;
 import awele.core.Board;
-import awele.core.InvalidBotException;
 
-public class CamhamBot extends DemoBot {
+public class CamhamBot extends CompetitorBot {
     @Override
     public void initialize() {
 
