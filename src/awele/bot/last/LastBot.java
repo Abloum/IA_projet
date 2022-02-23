@@ -6,7 +6,7 @@ import awele.core.InvalidBotException;
 
 /**
  * @author Alexandre Blansché
- * Bot qui joue toujours le coup le plus à gauche
+ * Bot qui joue toujours le coup le plus à droite
  */
 public class LastBot extends DemoBot
 {
