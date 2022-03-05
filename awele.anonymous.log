@@ -1,223 +1,118 @@
 Mémoire totale : 1,9 GiB
 Instanciation du bot "Random"
-8 classes ont été trouvées
-class awele.bot.Stratege.StrategeBrutalSansQIBot
-class awele.bot.Stratege.StrategeSansQIBot
+5 classes ont été trouvées
+class awele.bot.Alakazam.AlakazamBot
 class awele.bot.random.RandomBot
 class awele.bot.camham.CamhamBot
-class awele.bot.last.LastBot
 class awele.bot.minmax.MinMaxBot
-class awele.bot.bourrinos.BourrinosShiny
-class awele.bot.bourrinos.Bourrinos
+class awele.bot.Psykokwak.PsykokwakBot
 
-Bot 1/8
-Classe : awele.bot.Stratege.StrategeBrutalSansQIBot
-Instanciation du bot "Stratege brutal mais toujours sans QI"
-Nom du bot : Stratege brutal mais toujours sans QI
+Bot 1/5
+Classe : awele.bot.Alakazam.AlakazamBot
+Instanciation du bot "Alakazam"
+Nom du bot : Alakazam
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.023
 Usage mémoire : 0 B
-Usage mémoire maximum : 537,8 KiB
+Usage mémoire maximum : 22,0 MiB
 
-Bot 2/8
-Classe : awele.bot.Stratege.StrategeSansQIBot
-Instanciation du bot "Stratege sans QI"
-Nom du bot : Stratege sans QI
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 120 B
-Usage mémoire maximum : 743,4 KiB
-
-Bot 3/8
+Bot 2/5
 Classe : awele.bot.random.RandomBot
 Instanciation du bot "Random"
 Nom du bot : Random
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 584 B
-Usage mémoire maximum : 374,0 KiB
+Usage mémoire : 344 B
+Usage mémoire maximum : 383,9 KiB
 
-Bot 4/8
+Bot 3/5
 Classe : awele.bot.camham.CamhamBot
 Nom du bot : 
 Bot "awele.bot.camham.CamhamBot" disqualifié : ne peut pas être instancié
 java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 
-Bot 5/8
-Classe : awele.bot.last.LastBot
-Instanciation du bot "Last"
-Nom du bot : Last
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 1,1 KiB
-Usage mémoire maximum : 474,2 KiB
-
-Bot 6/8
+Bot 4/5
 Classe : awele.bot.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.138
-Bot "MinMax" disqualifié : durée d'une prise de décision trop long
+Durée d'une prise de décision : 00:00:00.012
+Usage mémoire : 1,1 KiB
+Usage mémoire maximum : 41,0 MiB
 
-Bot 7/8
-Classe : awele.bot.bourrinos.BourrinosShiny
-Instanciation du bot "Bourrinos shiny"
-Nom du bot : Bourrinos shiny
+Bot 5/5
+Classe : awele.bot.Psykokwak.PsykokwakBot
+Instanciation du bot "Psykokwak"
+Nom du bot : Psykokwak
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 648 B
-Usage mémoire maximum : 673,2 KiB
+Durée d'une prise de décision : 00:00:00.017
+Usage mémoire : 1,4 KiB
+Usage mémoire maximum : 34,5 MiB
 
-Bot 8/8
-Classe : awele.bot.bourrinos.Bourrinos
-Instanciation du bot "Bourrinos"
-Nom du bot : Bourrinos
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 592 B
-Usage mémoire maximum : 566,8 KiB
-
-6 bots ont été instanciés
-Durée du chargement : 00:00:07.864
+4 bots ont été instanciés
+Durée du chargement : 00:00:03.313
 Mémoire utilisée : 4,2 MiB
 
 Que le championnat commence !
 
-Affrontement 1/15
-Stratege brutal mais toujours sans QI vs. Stratege sans QI
+Affrontement 1/6
+Alakazam vs. Random
 Score : 3.0 - 0.0
-Stratege brutal mais toujours sans QI a gagné
-Nombre de coups joués : 99.9 par match
-Durée : 00:00:00.000 par match
+Alakazam a gagné
+Nombre de coups joués : 33.95 par match
+Durée : 00:00:00.139 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 2/15
-Stratege brutal mais toujours sans QI vs. Random
-Score : 2.97 - 0.03
-Stratege brutal mais toujours sans QI a gagné
-Nombre de coups joués : 42.485 par match
-Durée : 00:00:00.000 par match
+Affrontement 2/6
+Alakazam vs. MinMax
+Score : 1.53 - 1.47
+Alakazam a gagné
+Nombre de coups joués : 86.93 par match
+Durée : 00:00:00.498 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 3/15
-Stratege brutal mais toujours sans QI vs. Last
-Score : 3.0 - 0.0
-Stratege brutal mais toujours sans QI a gagné
-Nombre de coups joués : 99.4 par match
-Durée : 00:00:00.000 par match
+Affrontement 3/6
+Alakazam vs. Psykokwak
+Score : 1.61 - 1.37
+Alakazam a gagné
+Nombre de coups joués : 84.945 par match
+Durée : 00:00:00.559 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 4/15
-Stratege brutal mais toujours sans QI vs. Bourrinos shiny
-Score : 1.0 - 1.0
-Égalité
-Nombre de coups joués : 36.0 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 5/15
-Stratege brutal mais toujours sans QI vs. Bourrinos
-Score : 2.25 - 0.75
-Stratege brutal mais toujours sans QI a gagné
-Nombre de coups joués : 37.945 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 6/15
-Stratege sans QI vs. Random
-Score : 2.94 - 0.06
-Stratege sans QI a gagné
-Nombre de coups joués : 99.275 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 7/15
-Stratege sans QI vs. Last
-Score : 3.0 - 0.0
-Stratege sans QI a gagné
-Nombre de coups joués : 116.0 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 8/15
-Stratege sans QI vs. Bourrinos shiny
+Affrontement 4/6
+Random vs. MinMax
 Score : 0.0 - 3.0
-Bourrinos shiny a gagné
-Nombre de coups joués : 100.9 par match
-Durée : 00:00:00.000 par match
+MinMax a gagné
+Nombre de coups joués : 32.1 par match
+Durée : 00:00:00.095 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 9/15
-Stratege sans QI vs. Bourrinos
-Score : 1.23 - 1.77
-Bourrinos a gagné
-Nombre de coups joués : 80.04 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 10/15
-Random vs. Last
-Score : 0.09 - 2.91
-Last a gagné
-Nombre de coups joués : 109.89 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 11/15
-Random vs. Bourrinos shiny
-Score : 0.03 - 2.97
-Bourrinos shiny a gagné
-Nombre de coups joués : 43.175 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 12/15
-Random vs. Bourrinos
-Score : 0.03 - 2.97
-Bourrinos a gagné
-Nombre de coups joués : 41.37 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 13/15
-Last vs. Bourrinos shiny
+Affrontement 5/6
+Random vs. Psykokwak
 Score : 0.0 - 3.0
-Bourrinos shiny a gagné
-Nombre de coups joués : 99.2 par match
-Durée : 00:00:00.000 par match
+Psykokwak a gagné
+Nombre de coups joués : 34.05 par match
+Durée : 00:00:00.131 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 14/15
-Last vs. Bourrinos
-Score : 2.49 - 0.51
-Last a gagné
-Nombre de coups joués : 65.36 par match
-Durée : 00:00:00.000 par match
+Affrontement 6/6
+MinMax vs. Psykokwak
+Score : 1.16 - 1.79
+Psykokwak a gagné
+Nombre de coups joués : 82.41 par match
+Durée : 00:00:00.467 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 15/15
-Bourrinos shiny vs. Bourrinos
-Score : 1.56 - 1.44
-Bourrinos shiny a gagné
-Nombre de coups joués : 34.455 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Durée du championnat : 00:00:01.537
+Durée du championnat : 00:06:18.841
 
 Scores finaux :
-Stratege brutal mais toujours sans QI : 12.22
-Stratege sans QI : 7.17
-Random : 0.24
-Last : 5.4
-Bourrinos shiny : 11.53
-Bourrinos : 7.44
+Alakazam : 6.14
+Random : 0.0
+MinMax : 5.63
+Psykokwak : 6.16
 
 Rangs :
-1. Stratege brutal mais toujours sans QI : 12.22
-2. Bourrinos shiny : 11.53
-3. Bourrinos : 7.44
-4. Stratege sans QI : 7.17
-5. Last : 5.4
-6. Random : 0.24
+1. Psykokwak : 6.16
+2. Alakazam : 6.14
+3. MinMax : 5.63
+4. Random : 0.0

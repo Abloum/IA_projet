@@ -1,25 +1,26 @@
-package awele.bot.minmax;
+package awele.bot.Psykokwak;
 
+import awele.bot.CompetitorBot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
- * Bot qui prend ses décisions selon le MinMax
+ * @author Abraham Giuliani
+ * Bot qui prend ses décisions selon MinMax et Bourrinos
  */
-public class MinMaxBot extends DemoBot
+public class PsykokwakBot extends CompetitorBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 4;
-	
+
     /**
      * @throws InvalidBotException
      */
-    public MinMaxBot () throws InvalidBotException
+    public PsykokwakBot () throws InvalidBotException
     {
-        this.setBotName ("MinMax");
-        this.addAuthor ("Alexandre Blansché");
+        this.setBotName ("Psykokwak");
+        this.addAuthor ("Abraham Giuliani");
     }
 
     /**
@@ -44,7 +45,7 @@ public class MinMaxBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     {
-        MinMaxNode.initialize (board, MinMaxBot.MAX_DEPTH);
+        PsykokwakNode.initialize (board, PsykokwakBot.MAX_DEPTH);
         return new MaxNode (board).getDecision ();
     }
 

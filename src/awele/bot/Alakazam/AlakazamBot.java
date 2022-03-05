@@ -1,25 +1,25 @@
-package awele.bot.minmax;
+package awele.bot.Alakazam;
 
-import awele.bot.DemoBot;
+import awele.bot.CompetitorBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
- * Bot qui prend ses décisions selon le MinMax
+ * @author Abraham Giuliani
+ * Bot qui prend ses décisions selon MinMax et Stratege
  */
-public class MinMaxBot extends DemoBot
+public class AlakazamBot extends CompetitorBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 4;
-	
+
     /**
      * @throws InvalidBotException
      */
-    public MinMaxBot () throws InvalidBotException
+    public AlakazamBot () throws InvalidBotException
     {
-        this.setBotName ("MinMax");
-        this.addAuthor ("Alexandre Blansché");
+        this.setBotName ("Alakazam");
+        this.addAuthor ("Abraham Giuliani");
     }
 
     /**
@@ -44,8 +44,8 @@ public class MinMaxBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     {
-        MinMaxNode.initialize (board, MinMaxBot.MAX_DEPTH);
-        return new MaxNode (board).getDecision ();
+        AlakazamNode.initialize (board, AlakazamBot.MAX_DEPTH);
+        return new MaxNode(board).getDecision ();
     }
 
     /**
