@@ -1,12 +1,14 @@
 package awele.bot.Alakazam;
 
+import awele.bot.Alakazam.AlakazamNode;
+import awele.bot.Alakazam.MaxNode;
 import awele.core.Board;
 
 /**
  * @author Alexandre Blansché
  * Noeud Min : estimation du meilleur coup possible pour l'adversaire
  */
-public class MinNode extends AlakazamNode
+public class MinNode extends awele.bot.Alakazam.AlakazamNode
 {
     /**
      * Constructeur pour un noeud initial

@@ -1,4 +1,4 @@
-package awele.bot.Alakazam;
+package awele.bot.AlakazamShiny;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -7,15 +7,13 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansché
  * Noeud d'un arbre MinMax
  */
-public abstract class AlakazamNode
+public abstract class AlakazamShinyNode
 {
     /** Numéro de joueur de l'IA */
     private static int player;
 
     /** Profondeur maximale */
     private static int maxDepth;
-
-    private int DernierCoupJoue;
 
     /** L'évaluation du noeud */
     private double evaluation;
@@ -30,7 +28,7 @@ public abstract class AlakazamNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public AlakazamNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue)
+    public AlakazamShinyNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue)
     {
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -60,10 +58,10 @@ public abstract class AlakazamNode
                     else
                     {
                         /* Si la profondeur maximale n'est pas atteinte */
-                        if (depth < awele.bot.Alakazam.AlakazamNode.maxDepth)
+                        if (depth < AlakazamShinyNode.maxDepth)
                         {
                             /* On construit le noeud suivant */
-                            awele.bot.Alakazam.AlakazamNode child = this.getNextNode (copy, depth + 1, alpha, beta, i);
+                            AlakazamShinyNode child = this.getNextNode (copy, depth + 1, alpha, beta, i);
                             /* On récupère l'évaluation du noeud fils */
                             this.decision [i] = child.getEvaluation ();
                         }
@@ -96,13 +94,13 @@ public abstract class AlakazamNode
      */
     protected static void initialize (Board board, int maxDepth)
     {
-        awele.bot.Alakazam.AlakazamNode.maxDepth = maxDepth;
-        awele.bot.Alakazam.AlakazamNode.player = board.getCurrentPlayer ();
+        AlakazamShinyNode.maxDepth = maxDepth;
+        AlakazamShinyNode.player = board.getCurrentPlayer ();
     }
 
     private int diffScore (Board board)
     {
-        return board.getScore (awele.bot.Alakazam.AlakazamNode.player) - board.getScore (Board.otherPlayer (awele.bot.Alakazam.AlakazamNode.player));
+        return board.getScore (AlakazamShinyNode.player) - board.getScore (Board.otherPlayer (AlakazamShinyNode.player));
     }
 
     private double BourrinosShiny(int i, Board board){
@@ -110,7 +108,7 @@ public abstract class AlakazamNode
                 double IValue = this.decision[i];
                 this.decision[i] = Integer.MAX_VALUE;
                 int test = board.playMoveSimulationScore(board.getCurrentPlayer(), decision);
-                if (board.getCurrentPlayer()== awele.bot.Alakazam.AlakazamNode.player) {
+                if (board.getCurrentPlayer()==AlakazamShinyNode.player) {
                     return test + IValue + i + diffScore(board);
                 }
                 else return diffScore(board) - test + IValue;
@@ -137,9 +135,20 @@ public abstract class AlakazamNode
                     return i;
                 }
             }
-            /** En fin de partie, on ne cherche qu'a joué des coups qui nous permettent de scorer **/
-            else return BourrinosShiny(i,board);
-            }
+                /** En fin de partie, on cherche à poser des pieges sur le terrain adverse (de sorte a pouvoir marquer au coup suivant) **/
+                else {
+                    int valPiege = 0;
+                    int [] trouAdverse = board.getOpponentHoles();
+                    int fin = trouJoueur[i]+i;
+                    for (int j = (fin%6); j < 0; j--) {
+                        if (trouAdverse[j]<1) {
+                            valPiege += trouAdverse[j] + 1;
+                        }
+                        else break;
+                    }
+                    return diffScore(board) + valPiege + i;
+                }
+    }
 
     /**
      * Mise à jour de alpha
@@ -182,7 +191,7 @@ public abstract class AlakazamNode
      * @param beta Le seuil pour la coupe beta
      * @return Un noeud (MinNode ou MaxNode) du niveau suivant
      */
-    protected abstract awele.bot.Alakazam.AlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue);
+    protected abstract AlakazamShinyNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue);
 
     /**
      * L'évaluation du noeud

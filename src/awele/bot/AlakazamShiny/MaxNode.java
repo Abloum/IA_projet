@@ -1,14 +1,14 @@
-package awele.bot.Alakazam;
+package awele.bot.AlakazamShiny;
 
-import awele.bot.Alakazam.AlakazamNode;
-import awele.bot.Alakazam.MinNode;
+import awele.bot.AlakazamShiny.AlakazamShinyNode;
+import awele.bot.AlakazamShiny.MinNode;
 import awele.core.Board;
 
 /**
  * @author Alexandre Blansché
  * Noeud Max : estimation du meilleur coup possible pour l'IA
  */
-public class MaxNode extends awele.bot.Alakazam.AlakazamNode
+public class MaxNode extends awele.bot.AlakazamShiny.AlakazamShinyNode
 {
     /**
      * Constructeur pour un noeud initial
@@ -65,7 +65,7 @@ public class MaxNode extends awele.bot.Alakazam.AlakazamNode
      * @return Un noeud MinNode du niveau suivant
      */
     @Override
-    protected AlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
+    protected AlakazamShinyNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
     {
         return new MinNode(board, depth, alpha, beta, DernierCoupJoue);
     }

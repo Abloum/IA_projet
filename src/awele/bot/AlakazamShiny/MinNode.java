@@ -1,50 +1,49 @@
-package awele.bot.Alakazam;
+package awele.bot.AlakazamShiny;
 
-import awele.bot.Alakazam.AlakazamNode;
-import awele.bot.Alakazam.MinNode;
 import awele.core.Board;
 
 /**
  * @author Alexandre Blansché
- * Noeud Max : estimation du meilleur coup possible pour l'IA
+ * Noeud Min : estimation du meilleur coup possible pour l'adversaire
  */
-public class MaxNode extends awele.bot.Alakazam.AlakazamNode
+public class MinNode extends AlakazamShinyNode
 {
     /**
      * Constructeur pour un noeud initial
      * @param board La situation de jeu pour laquelle il faut prendre une décision
      */
-    MaxNode (Board board)
+    MinNode (Board board)
     {
-        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE,-1);
+        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, -1);
     }
 
     /**
      * Constructeur d'un noeud interne
-     * @param board La situation de jeu pour le noeud
+     * @param board L'état de la grille de jeu
      * @param depth La profondeur du noeud
-     * @param alphabeta Le seuil pour la coupe alpha-beta
+     * @param alpha Le seuil pour la coupe alpha
+     * @param beta Le seuil pour la coupe beta
      */
-    MaxNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
+    MinNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
     {
         super (board, depth, alpha, beta, DernierCoupJoue);
     }
 
     /**
-     * Retourne le max
+     * Retourne le min
      * @param eval1 Un double
      * @param eval2 Un autre double
-     * @return Le max entre deux valeurs, selon le type de noeud
+     * @return Le min entre deux valeurs, selon le type de noeud
      */
     @Override
     protected double minmax (double eval1, double eval2)
     {
-        return Math.max (eval1, eval2);
+        return Math.min (eval1, eval2);
     }
 
     /**
      * Indique s'il faut faire une coupe alpha-beta
-     * (si l'évaluation courante du noeud est supérieure à l'évaluation courante du noeud parent)
+     * (si l'évaluation courante du noeud est inférieure à l'évaluation courante du noeud parent)
      * @param eval L'évaluation courante du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
@@ -53,21 +52,21 @@ public class MaxNode extends awele.bot.Alakazam.AlakazamNode
     @Override
     protected boolean alphabeta (double eval, double alpha, double beta)
     {
-        return eval >= beta;
+        return eval <= alpha;
     }
 
     /**
-     * Retourne un noeud MinNode du niveau suivant
+     * Retourne un noeud MaxNode du niveau suivant
      * @param board L'état de la grille de jeu
      * @param depth La profondeur du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
-     * @return Un noeud MinNode du niveau suivant
+     * @return Un noeud MaxNode du niveau suivant
      */
     @Override
-    protected AlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
+    protected AlakazamShinyNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
     {
-        return new MinNode(board, depth, alpha, beta, DernierCoupJoue);
+        return new MaxNode(board, depth, alpha, beta, DernierCoupJoue);
     }
 
     /**
@@ -79,7 +78,7 @@ public class MaxNode extends awele.bot.Alakazam.AlakazamNode
     @Override
     protected double alpha (double evaluation, double alpha)
     {
-        return Math.max (evaluation, alpha);
+        return alpha;
     }
 
     /**
@@ -91,13 +90,13 @@ public class MaxNode extends awele.bot.Alakazam.AlakazamNode
     @Override
     protected double beta (double evaluation, double beta)
     {
-        return beta;
+        return Math.min (evaluation, beta);
     }
 
-    /** Pire score : une petite valeur */
+    /** Pire score : une grande valeur */
     @Override
     protected double worst ()
     {
-        return -Double.MAX_VALUE;
+        return Double.MAX_VALUE;
     }
 }

@@ -1,13 +1,14 @@
 Mémoire totale : 1,9 GiB
 Instanciation du bot "Random"
-5 classes ont été trouvées
+6 classes ont été trouvées
 class awele.bot.Alakazam.AlakazamBot
 class awele.bot.random.RandomBot
 class awele.bot.camham.CamhamBot
 class awele.bot.minmax.MinMaxBot
 class awele.bot.Psykokwak.PsykokwakBot
+class awele.bot.AlakazamShiny.AlakazamShinyBot
 
-Bot 1/5
+Bot 1/6
 Classe : awele.bot.Alakazam.AlakazamBot
 Instanciation du bot "Alakazam"
 Nom du bot : Alakazam
@@ -15,9 +16,9 @@ Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.023
 Usage mémoire : 0 B
-Usage mémoire maximum : 22,0 MiB
+Usage mémoire maximum : 529,0 KiB
 
-Bot 2/5
+Bot 2/6
 Classe : awele.bot.random.RandomBot
 Instanciation du bot "Random"
 Nom du bot : Random
@@ -25,98 +26,65 @@ Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
 Usage mémoire : 344 B
-Usage mémoire maximum : 383,9 KiB
+Usage mémoire maximum : 384,0 KiB
 
-Bot 3/5
+Bot 3/6
 Classe : awele.bot.camham.CamhamBot
 Nom du bot : 
 Bot "awele.bot.camham.CamhamBot" disqualifié : ne peut pas être instancié
 java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 
-Bot 4/5
+Bot 4/6
 Classe : awele.bot.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.012
+Durée d'une prise de décision : 00:00:00.013
 Usage mémoire : 1,1 KiB
-Usage mémoire maximum : 41,0 MiB
+Usage mémoire maximum : 38,5 MiB
 
-Bot 5/5
+Bot 5/6
 Classe : awele.bot.Psykokwak.PsykokwakBot
 Instanciation du bot "Psykokwak"
 Nom du bot : Psykokwak
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.017
-Usage mémoire : 1,4 KiB
-Usage mémoire maximum : 34,5 MiB
+Durée d'une prise de décision : 00:00:00.013
+Usage mémoire : 1,3 KiB
+Usage mémoire maximum : 42,0 MiB
 
-4 bots ont été instanciés
-Durée du chargement : 00:00:03.313
-Mémoire utilisée : 4,2 MiB
+Bot 6/6
+Classe : awele.bot.AlakazamShiny.AlakazamShinyBot
+Instanciation du bot "AlakazamShiny"
+Nom du bot : AlakazamShiny
+Auteur(s) : Abraham Giuliani
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.010
+Usage mémoire : 1,3 KiB
+Usage mémoire maximum : 40,0 MiB
+
+5 bots ont été instanciés
+Durée du chargement : 00:00:03.938
+Mémoire utilisée : 4,3 MiB
 
 Que le championnat commence !
 
-Affrontement 1/6
+Affrontement 1/10
 Alakazam vs. Random
 Score : 3.0 - 0.0
 Alakazam a gagné
-Nombre de coups joués : 33.95 par match
-Durée : 00:00:00.139 par match
+Nombre de coups joués : 34.08 par match
+Durée : 00:00:00.138 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 2/6
+Affrontement 2/10
 Alakazam vs. MinMax
-Score : 1.53 - 1.47
+Score : 1.55 - 1.43
 Alakazam a gagné
-Nombre de coups joués : 86.93 par match
-Durée : 00:00:00.498 par match
+Nombre de coups joués : 82.57 par match
+Durée : 00:00:00.545 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 3/6
+Affrontement 3/10
 Alakazam vs. Psykokwak
-Score : 1.61 - 1.37
-Alakazam a gagné
-Nombre de coups joués : 84.945 par match
-Durée : 00:00:00.559 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 4/6
-Random vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 32.1 par match
-Durée : 00:00:00.095 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 5/6
-Random vs. Psykokwak
-Score : 0.0 - 3.0
-Psykokwak a gagné
-Nombre de coups joués : 34.05 par match
-Durée : 00:00:00.131 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 6/6
-MinMax vs. Psykokwak
-Score : 1.16 - 1.79
-Psykokwak a gagné
-Nombre de coups joués : 82.41 par match
-Durée : 00:00:00.467 par match
-Mémoire utilisée : 4,1 MiB
-
-Durée du championnat : 00:06:18.841
-
-Scores finaux :
-Alakazam : 6.14
-Random : 0.0
-MinMax : 5.63
-Psykokwak : 6.16
-
-Rangs :
-1. Psykokwak : 6.16
-2. Alakazam : 6.14
-3. MinMax : 5.63
-4. Random : 0.0
