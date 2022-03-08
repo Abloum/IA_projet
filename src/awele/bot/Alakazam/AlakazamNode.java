@@ -1,5 +1,6 @@
 package awele.bot.Alakazam;
 
+import awele.bot.Psykokwak.PsykokwakNode;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -69,7 +70,7 @@ public abstract class AlakazamNode
                         }
                         /* Sinon (si la profondeur maximale est atteinte), on évalue la situation actuelle */
                         else {
-                            this.decision[i] = this.BourrinosShiny(i, copy);
+                            this.decision[i] = this.Stratege(i, copy);
                         }
                     }
                     /* L'évaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
@@ -126,16 +127,16 @@ public abstract class AlakazamNode
             if (board.getNbSeeds() > 22) {
                 /** Si un Krou est valide est permet de scorer, on joue ce trou peu importe la situation des autres **/
                 try {
-                    double IValue = decision[i];
-                    decision[i] += 100;
-                    if (trouJoueur[i] + i >= 19 && board.playMoveSimulationScore(board.getCurrentPlayer(),decision)>2)
+                    Board test = (Board) board.clone();
+                    if (trouJoueur[i] + i >= 19 && board.playMoveSimulationScore(test.getCurrentPlayer(),decision)>2)
                     {
-                        return 1000+i;
+                        if (board.getCurrentPlayer()== AlakazamNode.player) {
+                            return 1000 + i;
+                        }
+                        else return 0;
                     }
-                    return BourrinosShiny(i, board);
-                } catch (InvalidBotException e) {
-                    return i;
-                }
+                } catch (InvalidBotException e) {}
+                return BourrinosShiny(i, board);
             }
             /** En fin de partie, on ne cherche qu'a joué des coups qui nous permettent de scorer **/
             else return BourrinosShiny(i,board);

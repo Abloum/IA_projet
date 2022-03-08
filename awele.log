@@ -14,9 +14,9 @@ Instanciation du bot "Alakazam"
 Nom du bot : Alakazam
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.023
+Durée d'une prise de décision : 00:00:00.034
 Usage mémoire : 0 B
-Usage mémoire maximum : 529,0 KiB
+Usage mémoire maximum : 31,5 MiB
 
 Bot 2/6
 Classe : awele.bot.random.RandomBot
@@ -26,7 +26,7 @@ Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
 Usage mémoire : 344 B
-Usage mémoire maximum : 384,0 KiB
+Usage mémoire maximum : 444,0 KiB
 
 Bot 3/6
 Classe : awele.bot.camham.CamhamBot
@@ -40,9 +40,9 @@ Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.013
+Durée d'une prise de décision : 00:00:00.015
 Usage mémoire : 1,1 KiB
-Usage mémoire maximum : 38,5 MiB
+Usage mémoire maximum : 25,5 MiB
 
 Bot 5/6
 Classe : awele.bot.Psykokwak.PsykokwakBot
@@ -50,9 +50,9 @@ Instanciation du bot "Psykokwak"
 Nom du bot : Psykokwak
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.013
-Usage mémoire : 1,3 KiB
-Usage mémoire maximum : 42,0 MiB
+Durée d'une prise de décision : 00:00:00.015
+Usage mémoire : 1,4 KiB
+Usage mémoire maximum : 35,0 MiB
 
 Bot 6/6
 Classe : awele.bot.AlakazamShiny.AlakazamShinyBot
@@ -60,12 +60,12 @@ Instanciation du bot "AlakazamShiny"
 Nom du bot : AlakazamShiny
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.010
+Durée d'une prise de décision : 00:00:00.014
 Usage mémoire : 1,3 KiB
-Usage mémoire maximum : 40,0 MiB
+Usage mémoire maximum : 8,5 MiB
 
 5 bots ont été instanciés
-Durée du chargement : 00:00:03.938
+Durée du chargement : 00:00:04.205
 Mémoire utilisée : 4,3 MiB
 
 Que le championnat commence !
@@ -74,17 +74,73 @@ Affrontement 1/10
 Alakazam vs. Random
 Score : 3.0 - 0.0
 Alakazam a gagné
-Nombre de coups joués : 34.08 par match
-Durée : 00:00:00.138 par match
+Nombre de coups joués : 34.02 par match
+Durée : 00:00:00.151 par match
 Mémoire utilisée : 4,1 MiB
 
 Affrontement 2/10
 Alakazam vs. MinMax
-Score : 1.55 - 1.43
+Score : 1.76 - 1.19
 Alakazam a gagné
-Nombre de coups joués : 82.57 par match
-Durée : 00:00:00.545 par match
+Nombre de coups joués : 87.175 par match
+Durée : 00:00:00.496 par match
 Mémoire utilisée : 4,1 MiB
 
 Affrontement 3/10
 Alakazam vs. Psykokwak
+Score : 1.41 - 1.59
+Psykokwak a gagné
+Nombre de coups joués : 87.56 par match
+Durée : 00:00:00.614 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 4/10
+Alakazam vs. AlakazamShiny
+Score : 2.09 - 0.86
+Alakazam a gagné
+Nombre de coups joués : 139.465 par match
+Durée : 00:00:00.783 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 5/10
+Random vs. MinMax
+Score : 0.0 - 3.0
+MinMax a gagné
+Nombre de coups joués : 33.19 par match
+Durée : 00:00:00.093 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 6/10
+Random vs. Psykokwak
+Score : 0.0 - 3.0
+Psykokwak a gagné
+Nombre de coups joués : 35.03 par match
+Durée : 00:00:00.134 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 7/10
+Random vs. AlakazamShiny
+Score : 0.0 - 3.0
+AlakazamShiny a gagné
+Nombre de coups joués : 37.67 par match
+Durée : 00:00:00.157 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 8/10
+MinMax vs. Psykokwak
+Score : 1.2 - 1.77
+Psykokwak a gagné
+Nombre de coups joués : 84.28 par match
+Durée : 00:00:00.459 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 9/10
+MinMax vs. AlakazamShiny
+Score : 2.1 - 0.9
+MinMax a gagné
+Nombre de coups joués : 130.305 par match
+Durée : 00:00:00.583 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 10/10
+Psykokwak vs. AlakazamShiny
