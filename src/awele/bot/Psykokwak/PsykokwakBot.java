@@ -9,7 +9,7 @@ import awele.core.InvalidBotException;
  * @author Abraham Giuliani
  * Bot qui prend ses décisions selon MinMax et Bourrinos
  */
-public class PsykokwakBot extends DemoBot
+public class PsykokwakBot extends CompetitorBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 6;

@@ -4,8 +4,8 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
- * Noeud d'un arbre MinMax
+ * @author Abraham Giuliani & Camille Masson
+ * Noeud d'un arbre de Mega Alakazam
  */
 public abstract class MegaAlakazamNode
 {
@@ -18,6 +18,7 @@ public abstract class MegaAlakazamNode
     /** L'évaluation du noeud */
     private double evaluation;
 
+    /** Le dernier coup joué (pour la strategie de début de partie)*/
     private int DernierCoupJoue;
 
     /** Évaluation des coups selon MinMax */
@@ -51,6 +52,7 @@ public abstract class MegaAlakazamNode
         for (int i = 0; i < Board.NB_HOLES; i++)
             /* Si le coup est jouable */
             if (board.getPlayerHoles () [i] != 0 &&
+                    /* Et qu'on le prend en compte (strategie de debut de partie */
                     ((this.player!=board.getCurrentPlayer()) || !((board.getNbSeeds() > 40)&&(dernierCoupJoue==i))))
             {
                 /* Sélection du coup à jouer */
@@ -74,7 +76,7 @@ public abstract class MegaAlakazamNode
                         /* Si la profondeur maximale n'est pas atteinte */
                         if (depth < MegaAlakazamNode.maxDepth && budget >= 0)
                         {
-                            /* On construit le noeud suivant */
+                            /* On construit le noeud suivant en fonction de qui joue pour garder le dernier coup joué */
                             if (this.player!=board.getCurrentPlayer()) {
                                 awele.bot.MegaAlakazam.MegaAlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, DernierCoupJoue, budget);
                                 /* On récupère l'évaluation du noeud fils */
@@ -123,6 +125,7 @@ public abstract class MegaAlakazamNode
         return board.getScore (MegaAlakazamNode.player) - board.getScore (Board.otherPlayer (MegaAlakazamNode.player));
     }
 
+    /* Bourrinos Shiny */
     private double BourrinosShiny(int i, Board board){
             try {
                 double IValue = this.decision[i];
@@ -138,11 +141,12 @@ public abstract class MegaAlakazamNode
             return diffScore(board)+i;
         }
 
+        /* Strategie */
         private double Stratege(int i, Board board){
             int [] trouJoueur = board.getPlayerHoles();
             /** En milieu de partie, strategie du Krou **/
             if (board.getNbSeeds() > 22 && board.getNbSeeds() < 40) {
-                /** Si un Krou est valide est permet de scorer, on joue ce trou peu importe la situation des autres **/
+                /** Si un Krou est valide est permet de scorer, on met une très forte importance sur ce trou **/
                 try {
                     Board test = (Board) board.clone();
                     if (trouJoueur[i] + i >= 19 && board.playMoveSimulationScore(test.getCurrentPlayer(),decision)>2)

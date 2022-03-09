@@ -9,7 +9,7 @@ import awele.core.InvalidBotException;
  * @author Abraham Giuliani
  * Bot qui prend ses décisions selon MinMax et Stratege
  */
-public class AlakazamShinyBot extends DemoBot
+public class AlakazamShinyBot extends CompetitorBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 6 ;

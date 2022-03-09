@@ -1,115 +1,91 @@
-Mémoire totale : 4,0 GiB
+Mémoire totale : 1,9 GiB
 Instanciation du bot "Random"
-4 classes ont été trouvées
+5 classes ont été trouvées
 class awele.bot.Alakazam.AlakazamBot
 class awele.bot.minmax.MinMaxBot
 class awele.bot.Relicanth.RelicanthBot
-class awele.bot.MegaAlakazam.MegaAlakazamBot
+class awele.bot.Psykokwak.PsykokwakBot
+class awele.bot.AlakazamShiny.AlakazamShinyBot
 
-Bot 1/4
+Bot 1/5
 Classe : awele.bot.Alakazam.AlakazamBot
 Instanciation du bot "Alakazam"
 Nom du bot : Alakazam
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.088
-Usage mémoire : 391,5 KiB
-Usage mémoire maximum : 33,4 MiB
+Durée d'une prise de décision : 00:00:00.474
+Usage mémoire : 0 B
+Usage mémoire maximum : 33,5 MiB
 
-Bot 2/4
+Bot 2/5
 Classe : awele.bot.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.064
-Usage mémoire : 1,1 KiB
-Usage mémoire maximum : 18,0 MiB
+Durée d'une prise de décision : 00:00:00.245
+Usage mémoire : 1000 B
+Usage mémoire maximum : 7,5 MiB
 
-Bot 3/4
+Bot 3/5
 Classe : awele.bot.Relicanth.RelicanthBot
 Instanciation du bot "Relicanth"
 Nom du bot : Relicanth
 Auteur(s) : Masson Camille
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.061
+Durée d'une prise de décision : 00:00:00.205
 Usage mémoire : 1,3 KiB
-Usage mémoire maximum : 29,0 MiB
+Usage mémoire maximum : 77,5 MiB
 
-Bot 4/4
-Classe : awele.bot.MegaAlakazam.MegaAlakazamBot
-Instanciation du bot "MegaAlakazam"
-Nom du bot : MegaAlakazam
+Bot 4/5
+Classe : awele.bot.Psykokwak.PsykokwakBot
+Instanciation du bot "Psykokwak"
+Nom du bot : Psykokwak
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.096
-Usage mémoire : 1,3 KiB
-Usage mémoire maximum : 20,0 MiB
+Durée d'une prise de décision : 00:00:00.276
+Usage mémoire : 1,4 KiB
+Usage mémoire maximum : 42,5 MiB
 
-4 bots ont été instanciés
-Durée du chargement : 00:00:10.917
+Bot 5/5
+Classe : awele.bot.AlakazamShiny.AlakazamShinyBot
+Instanciation du bot "AlakazamShiny"
+Nom du bot : AlakazamShiny
+Auteur(s) : Abraham Giuliani
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.252
+Usage mémoire : 1,3 KiB
+Usage mémoire maximum : 41,0 MiB
+
+5 bots ont été instanciés
+Durée du chargement : 00:00:49.868
 Mémoire utilisée : 4,2 MiB
 
 Que le championnat commence !
 
-Affrontement 1/6
+Affrontement 1/10
 Alakazam vs. MinMax
-Score : 1.8 - 1.2
-Alakazam a gagné
-Nombre de coups joués : 77.8 par match
-Durée : 00:00:05.011 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 2/6
-Alakazam vs. Relicanth
-Score : 1.8 - 1.2
-Alakazam a gagné
-Nombre de coups joués : 100.7 par match
-Durée : 00:00:07.760 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 3/6
-Alakazam vs. MegaAlakazam
 Score : 0.0 - 3.0
-MegaAlakazam a gagné
-Nombre de coups joués : 85.4 par match
-Durée : 00:00:06.232 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 4/6
-MinMax vs. Relicanth
-Score : 1.8 - 1.2
 MinMax a gagné
-Nombre de coups joués : 81.1 par match
-Durée : 00:00:05.160 par match
+Nombre de coups joués : 77.125 par match
+Durée : 00:00:10.087 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 5/6
-MinMax vs. MegaAlakazam
-Score : 0.6 - 2.4
-MegaAlakazam a gagné
-Nombre de coups joués : 102.1 par match
-Durée : 00:00:06.416 par match
+Affrontement 2/10
+Alakazam vs. Relicanth
+Score : 0.75 - 2.25
+Relicanth a gagné
+Nombre de coups joués : 88.625 par match
+Durée : 00:00:15.374 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 6/6
-Relicanth vs. MegaAlakazam
-Score : 0.0 - 3.0
-MegaAlakazam a gagné
-Nombre de coups joués : 92.7 par match
-Durée : 00:00:07.774 par match
+Affrontement 3/10
+Alakazam vs. Psykokwak
+Score : 0.75 - 2.25
+Psykokwak a gagné
+Nombre de coups joués : 85.375 par match
+Durée : 00:00:15.271 par match
 Mémoire utilisée : 4,1 MiB
 
-Durée du championnat : 00:06:23.762
-
-Scores finaux :
-Alakazam : 3.6
-MinMax : 3.6
-Relicanth : 2.4
-MegaAlakazam : 8.4
-
-Rangs :
-1. MegaAlakazam : 8.4
-2. MinMax : 3.6
-3. Alakazam : 3.6
-4. Relicanth : 2.4
+Affrontement 4/10
+Alakazam vs. AlakazamShiny
