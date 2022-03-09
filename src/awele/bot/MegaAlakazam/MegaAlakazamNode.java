@@ -1,6 +1,5 @@
-package awele.bot.AlakazamShiny;
+package awele.bot.MegaAlakazam;
 
-import awele.bot.Alakazam.AlakazamNode;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -8,15 +7,13 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansché
  * Noeud d'un arbre MinMax
  */
-public abstract class AlakazamShinyNode
+public abstract class MegaAlakazamNode
 {
     /** Numéro de joueur de l'IA */
     private static int player;
 
     /** Profondeur maximale */
     private static int maxDepth;
-
-    private int DernierCoupJoue;
 
     /** L'évaluation du noeud */
     private double evaluation;
@@ -31,7 +28,7 @@ public abstract class AlakazamShinyNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public AlakazamShinyNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue)
+    public MegaAlakazamNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue)
     {
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -61,18 +58,12 @@ public abstract class AlakazamShinyNode
                     else
                     {
                         /* Si la profondeur maximale n'est pas atteinte */
-                        if (depth < AlakazamShinyNode.maxDepth)
+                        if (depth < MegaAlakazamNode.maxDepth)
                         {
                             /* On construit le noeud suivant */
-                            if (this.player!=board.getCurrentPlayer()) {
-                                awele.bot.AlakazamShiny.AlakazamShinyNode child = this.getNextNode(copy, depth + 1, alpha, beta, DernierCoupJoue);
-                                /* On récupère l'évaluation du noeud fils */
-                                this.decision [i] = child.getEvaluation ();}
-                            else {
-                                awele.bot.AlakazamShiny.AlakazamShinyNode child = this.getNextNode(copy, depth + 1, alpha, beta, i);
-                                /* On récupère l'évaluation du noeud fils */
-                                this.decision [i] = child.getEvaluation ();
-                            }
+                            MegaAlakazamNode child = this.getNextNode (copy, depth + 1, alpha, beta, i);
+                            /* On récupère l'évaluation du noeud fils */
+                            this.decision [i] = child.getEvaluation ();
                         }
                         /* Sinon (si la profondeur maximale est atteinte), on évalue la situation actuelle */
                         else {
@@ -103,13 +94,13 @@ public abstract class AlakazamShinyNode
      */
     protected static void initialize (Board board, int maxDepth)
     {
-        AlakazamShinyNode.maxDepth = maxDepth;
-        AlakazamShinyNode.player = board.getCurrentPlayer ();
+        MegaAlakazamNode.maxDepth = maxDepth;
+        MegaAlakazamNode.player = board.getCurrentPlayer ();
     }
 
     private int diffScore (Board board)
     {
-        return board.getScore (AlakazamShinyNode.player) - board.getScore (Board.otherPlayer (AlakazamShinyNode.player));
+        return board.getScore (MegaAlakazamNode.player) - board.getScore (Board.otherPlayer (MegaAlakazamNode.player));
     }
 
     private double BourrinosShiny(int i, Board board){
@@ -117,7 +108,7 @@ public abstract class AlakazamShinyNode
                 double IValue = this.decision[i];
                 this.decision[i] = Integer.MAX_VALUE;
                 int test = board.playMoveSimulationScore(board.getCurrentPlayer(), decision);
-                if (board.getCurrentPlayer()==AlakazamShinyNode.player) {
+                if (board.getCurrentPlayer()==MegaAlakazamNode.player) {
                     return test + IValue + i + diffScore(board);
                 }
                 else return diffScore(board) - test + IValue;
@@ -136,7 +127,7 @@ public abstract class AlakazamShinyNode
                     Board test = (Board) board.clone();
                     if (trouJoueur[i] + i >= 19 && board.playMoveSimulationScore(test.getCurrentPlayer(),decision)>2)
                     {
-                        if (board.getCurrentPlayer()== AlakazamShinyNode.player) {
+                        if (board.getCurrentPlayer()== MegaAlakazamNode.player) {
                             return 1000 + i;
                         }
                     }
@@ -154,7 +145,7 @@ public abstract class AlakazamShinyNode
                         }
                         else break;
                     }
-                if (board.getCurrentPlayer()== AlakazamShinyNode.player) {
+                if (board.getCurrentPlayer()== MegaAlakazamNode.player) {
                     return BourrinosShiny(i, board) + valPiege;
                 }
                 else return BourrinosShiny(i, board) - valPiege;
@@ -202,7 +193,7 @@ public abstract class AlakazamShinyNode
      * @param beta Le seuil pour la coupe beta
      * @return Un noeud (MinNode ou MaxNode) du niveau suivant
      */
-    protected abstract AlakazamShinyNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue);
+    protected abstract MegaAlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue);
 
     /**
      * L'évaluation du noeud

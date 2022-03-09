@@ -13,9 +13,9 @@ Instanciation du bot "Alakazam"
 Nom du bot : Alakazam
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.027
+Durée d'une prise de décision : 00:00:00.012
 Usage mémoire : 0 B
-Usage mémoire maximum : 28,5 MiB
+Usage mémoire maximum : 3,2 MiB
 
 Bot 2/5
 Classe : awele.bot.random.RandomBot
@@ -25,7 +25,7 @@ Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
 Usage mémoire : 344 B
-Usage mémoire maximum : 443,5 KiB
+Usage mémoire maximum : 382,9 KiB
 
 Bot 3/5
 Classe : awele.bot.camham.CamhamBot
@@ -39,9 +39,9 @@ Instanciation du bot "Psykokwak"
 Nom du bot : Psykokwak
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.026
+Durée d'une prise de décision : 00:00:00.006
 Usage mémoire : 1,2 KiB
-Usage mémoire maximum : 18,5 MiB
+Usage mémoire maximum : 6,5 MiB
 
 Bot 5/5
 Classe : awele.bot.AlakazamShiny.AlakazamShinyBot
@@ -49,13 +49,13 @@ Instanciation du bot "AlakazamShiny"
 Nom du bot : AlakazamShiny
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.042
+Durée d'une prise de décision : 00:00:00.005
 Usage mémoire : 1,4 KiB
-Usage mémoire maximum : 35,0 MiB
+Usage mémoire maximum : 19,0 MiB
 
 4 bots ont été instanciés
-Durée du chargement : 00:00:05.384
-Mémoire utilisée : 4,2 MiB
+Durée du chargement : 00:00:02.406
+Mémoire utilisée : 4,3 MiB
 
 Que le championnat commence !
 
@@ -63,17 +63,60 @@ Affrontement 1/6
 Alakazam vs. Random
 Score : 3.0 - 0.0
 Alakazam a gagné
-Nombre de coups joués : 34.16 par match
-Durée : 00:00:00.146 par match
+Nombre de coups joués : 33.17 par match
+Durée : 00:00:00.030 par match
 Mémoire utilisée : 4,1 MiB
 
 Affrontement 2/6
 Alakazam vs. Psykokwak
-Score : 1.65 - 1.32
+Score : 1.49 - 1.46
 Alakazam a gagné
-Nombre de coups joués : 86.465 par match
-Durée : 00:00:00.664 par match
+Nombre de coups joués : 184.89 par match
+Durée : 00:00:00.293 par match
 Mémoire utilisée : 4,1 MiB
 
 Affrontement 3/6
 Alakazam vs. AlakazamShiny
+Score : 1.48 - 1.51
+AlakazamShiny a gagné
+Nombre de coups joués : 152.485 par match
+Durée : 00:00:00.216 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 4/6
+Random vs. Psykokwak
+Score : 0.0 - 3.0
+Psykokwak a gagné
+Nombre de coups joués : 35.38 par match
+Durée : 00:00:00.028 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 5/6
+Random vs. AlakazamShiny
+Score : 0.0 - 3.0
+AlakazamShiny a gagné
+Nombre de coups joués : 33.91 par match
+Durée : 00:00:00.040 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 6/6
+Psykokwak vs. AlakazamShiny
+Score : 1.42 - 1.54
+AlakazamShiny a gagné
+Nombre de coups joués : 175.235 par match
+Durée : 00:00:00.270 par match
+Mémoire utilisée : 4,1 MiB
+
+Durée du championnat : 00:02:56.825
+
+Scores finaux :
+Alakazam : 5.97
+Random : 0.0
+Psykokwak : 5.88
+AlakazamShiny : 6.05
+
+Rangs :
+1. AlakazamShiny : 6.05
+2. Alakazam : 5.97
+3. Psykokwak : 5.88
+4. Random : 0.0
