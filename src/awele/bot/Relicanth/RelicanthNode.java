@@ -1,6 +1,5 @@
-package awele.bot.Alakazam;
+package awele.bot.Relicanth;
 
-import awele.bot.Psykokwak.PsykokwakNode;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -8,7 +7,7 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansché
  * Noeud d'un arbre MinMax
  */
-public abstract class AlakazamNode
+public abstract class RelicanthNode
 {
     /** Numéro de joueur de l'IA */
     private static int player;
@@ -16,23 +15,37 @@ public abstract class AlakazamNode
     /** Profondeur maximale */
     private static int maxDepth;
 
-    private int DernierCoupJoue;
-
     /** L'évaluation du noeud */
     private double evaluation;
 
     /** Évaluation des coups selon MinMax */
     private double [] decision;
 
+
+    /** Buget de la recherche **/
+    private static final int PERTE = 12;
+
+
+
     /**
-     * Constructeur...
+     * Constructeur... 
      * @param board L'état de la grille de jeu
      * @param depth La profondeur du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public AlakazamNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue)
-    {
+    public RelicanthNode(Board board, int depth, double alpha, double beta, int budget) {
+
+
+        int nbPossib = 0;
+        for (int i = 0; i < Board.NB_HOLES; i++){
+            if (board.getPlayerHoles()[i] != 0)
+                nbPossib ++;
+        }
+        budget -= PERTE;
+        budget /= nbPossib;
+
+
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'évaluation courante */
@@ -40,9 +53,7 @@ public abstract class AlakazamNode
         /* On parcourt toutes les coups possibles */
         for (int i = 0; i < Board.NB_HOLES; i++)
             /* Si le coup est jouable */
-            // Si c'est pas a nous : go // si c'est a nous on verifie que =/ dernier coup
-            if (board.getPlayerHoles () [i] != 0 &&
-                    ((this.player!=board.getCurrentPlayer()) || !((board.getNbSeeds() > 40)&&(dernierCoupJoue==i))))
+            if (board.getPlayerHoles () [i] != 0)
             {
                 /* Sélection du coup à jouer */
                 double [] decision = new double [Board.NB_HOLES];
@@ -54,31 +65,27 @@ public abstract class AlakazamNode
                     int score = copy.playMoveSimulationScore (copy.getCurrentPlayer (), decision);
                     copy = copy.playMoveSimulationBoard (copy.getCurrentPlayer (), decision);
                     /* Si la nouvelle situation de jeu est un coup qui met fin à la partie,
-                       on évalue la situation actuelle */
+                       on évalue la situation actuelle */   
                     if ((score < 0) ||
                             (copy.getScore (Board.otherPlayer (copy.getCurrentPlayer ())) >= 25) ||
                             (copy.getNbSeeds () <= 6))
                         this.decision [i] = this.diffScore (copy);
-                        /* Sinon, on explore les coups suivants */
+                    /* Sinon, on explore les coups suivants */
                     else
                     {
+
                         /* Si la profondeur maximale n'est pas atteinte */
-                        if (depth < awele.bot.Alakazam.AlakazamNode.maxDepth)
+                        if (depth < RelicanthNode.maxDepth && budget >= 0)
                         {
                             /* On construit le noeud suivant */
-                            if (this.player!=board.getCurrentPlayer()) {
-                                awele.bot.Alakazam.AlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, DernierCoupJoue);
-                                /* On récupère l'évaluation du noeud fils */
-                                this.decision [i] = child.getEvaluation ();}
-                            else {
-                                awele.bot.Alakazam.AlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, i);
-                                /* On récupère l'évaluation du noeud fils */
-                                this.decision [i] = child.getEvaluation ();
-                            }
+                            RelicanthNode child = this.getNextNode (copy, depth + 1, alpha, beta, budget);
+                            /* On récupère l'évaluation du noeud fils */
+                            this.decision [i] = child.getEvaluation ();
                         }
                         /* Sinon (si la profondeur maximale est atteinte), on évalue la situation actuelle */
-                        else {
-                            this.decision[i] = this.Stratege(i, copy);
+                        else{
+                            this.decision [i] = this.diffScore (copy);
+                            //System.out.println("Profondeur attente : "+ depth);
                         }
                     }
                     /* L'évaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
@@ -88,7 +95,7 @@ public abstract class AlakazamNode
                     {
                         alpha = this.alpha (this.evaluation, alpha);
                         beta = this.beta (this.evaluation, beta);
-                    }
+                    }                        
                 }
                 catch (InvalidBotException e)
                 {
@@ -105,48 +112,14 @@ public abstract class AlakazamNode
      */
     protected static void initialize (Board board, int maxDepth)
     {
-        awele.bot.Alakazam.AlakazamNode.maxDepth = maxDepth;
-        awele.bot.Alakazam.AlakazamNode.player = board.getCurrentPlayer ();
+        RelicanthNode.maxDepth = maxDepth;
+        RelicanthNode.player = board.getCurrentPlayer ();
     }
 
     private int diffScore (Board board)
     {
-        return board.getScore (awele.bot.Alakazam.AlakazamNode.player) - board.getScore (Board.otherPlayer (awele.bot.Alakazam.AlakazamNode.player));
+        return board.getScore (RelicanthNode.player) - board.getScore (Board.otherPlayer (RelicanthNode.player));
     }
-
-    private double BourrinosShiny(int i, Board board){
-            try {
-                double IValue = this.decision[i];
-                this.decision[i] = Integer.MAX_VALUE;
-                int test = board.playMoveSimulationScore(board.getCurrentPlayer(), decision);
-                if (board.getCurrentPlayer()== awele.bot.Alakazam.AlakazamNode.player) {
-                    return test + IValue + i + diffScore(board);
-                }
-                else return diffScore(board) - test + IValue;
-            } catch (InvalidBotException e) {
-                e.printStackTrace();
-            }
-            return diffScore(board)+i;
-        }
-
-        private double Stratege(int i, Board board){
-            int [] trouJoueur = board.getPlayerHoles();
-            /** En milieu de partie, strategie du Krou **/
-            if (board.getNbSeeds() > 22 && board.getNbSeeds() < 40) {
-                /** Si un Krou est valide est permet de scorer, on joue ce trou peu importe la situation des autres **/
-                try {
-                    Board test = (Board) board.clone();
-                    if (trouJoueur[i] + i >= 19 && board.playMoveSimulationScore(test.getCurrentPlayer(),decision)>2)
-                    {
-                        if (board.getCurrentPlayer()== AlakazamNode.player) {
-                            return 1000 + i;
-                        }
-                    }
-                } catch (InvalidBotException e) {}
-            }
-            /** En fin de partie, on ne cherche qu'a joué des coups qui nous permettent de scorer **/
-            return BourrinosShiny(i,board);
-        }
 
     /**
      * Mise à jour de alpha
@@ -189,7 +162,7 @@ public abstract class AlakazamNode
      * @param beta Le seuil pour la coupe beta
      * @return Un noeud (MinNode ou MaxNode) du niveau suivant
      */
-    protected abstract awele.bot.Alakazam.AlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue);
+    protected abstract RelicanthNode getNextNode (Board board, int depth, double alpha, double beta, int budget);
 
     /**
      * L'évaluation du noeud

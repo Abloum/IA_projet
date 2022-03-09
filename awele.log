@@ -1,79 +1,49 @@
-Mémoire totale : 1,9 GiB
+Mémoire totale : 4,0 GiB
 Instanciation du bot "Random"
-5 classes ont été trouvées
-class awele.bot.Alakazam.AlakazamBot
-class awele.bot.random.RandomBot
-class awele.bot.camham.CamhamBot
+2 classes ont été trouvées
+class awele.bot.Relicanth.RelicanthBot
 class awele.bot.Psykokwak.PsykokwakBot
-class awele.bot.AlakazamShiny.AlakazamShinyBot
 
-Bot 1/5
-Classe : awele.bot.Alakazam.AlakazamBot
-Instanciation du bot "Alakazam"
-Nom du bot : Alakazam
-Auteur(s) : Abraham Giuliani
+Bot 1/2
+Classe : awele.bot.Relicanth.RelicanthBot
+Instanciation du bot "Relicanth"
+Nom du bot : Relicanth
+Auteur(s) : Masson Camille
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.027
-Usage mémoire : 0 B
-Usage mémoire maximum : 28,5 MiB
+Durée d'une prise de décision : 00:00:00.077
+Usage mémoire : 390,4 KiB
+Usage mémoire maximum : 72,4 MiB
 
-Bot 2/5
-Classe : awele.bot.random.RandomBot
-Instanciation du bot "Random"
-Nom du bot : Random
-Auteur(s) : Alexandre Blansché
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 344 B
-Usage mémoire maximum : 443,5 KiB
-
-Bot 3/5
-Classe : awele.bot.camham.CamhamBot
-Nom du bot : 
-Bot "awele.bot.camham.CamhamBot" disqualifié : ne peut pas être instancié
-java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
-
-Bot 4/5
+Bot 2/2
 Classe : awele.bot.Psykokwak.PsykokwakBot
 Instanciation du bot "Psykokwak"
 Nom du bot : Psykokwak
 Auteur(s) : Abraham Giuliani
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.026
-Usage mémoire : 1,2 KiB
-Usage mémoire maximum : 18,5 MiB
+Durée d'une prise de décision : 00:00:00.070
+Usage mémoire : 1,1 KiB
+Usage mémoire maximum : 163,0 MiB
 
-Bot 5/5
-Classe : awele.bot.AlakazamShiny.AlakazamShinyBot
-Instanciation du bot "AlakazamShiny"
-Nom du bot : AlakazamShiny
-Auteur(s) : Abraham Giuliani
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.042
-Usage mémoire : 1,4 KiB
-Usage mémoire maximum : 35,0 MiB
-
-4 bots ont été instanciés
-Durée du chargement : 00:00:05.384
+2 bots ont été instanciés
+Durée du chargement : 00:00:05.797
 Mémoire utilisée : 4,2 MiB
 
 Que le championnat commence !
 
-Affrontement 1/6
-Alakazam vs. Random
-Score : 3.0 - 0.0
-Alakazam a gagné
-Nombre de coups joués : 34.16 par match
-Durée : 00:00:00.146 par match
+Affrontement 1/1
+Relicanth vs. Psykokwak
+Score : 2.32 - 0.67
+Relicanth a gagné
+Nombre de coups joués : 88.36 par match
+Durée : 00:00:06.777 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 2/6
-Alakazam vs. Psykokwak
-Score : 1.65 - 1.32
-Alakazam a gagné
-Nombre de coups joués : 86.465 par match
-Durée : 00:00:00.664 par match
-Mémoire utilisée : 4,1 MiB
+Durée du championnat : 00:22:35.511
 
-Affrontement 3/6
-Alakazam vs. AlakazamShiny
+Scores finaux :
+Relicanth : 2.32
+Psykokwak : 0.67
+
+Rangs :
+1. Relicanth : 2.32
+2. Psykokwak : 0.67
