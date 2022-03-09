@@ -40,7 +40,9 @@ public abstract class AlakazamNode
         /* On parcourt toutes les coups possibles */
         for (int i = 0; i < Board.NB_HOLES; i++)
             /* Si le coup est jouable */
-            if (board.getPlayerHoles () [i] != 0 && !((board.getNbSeeds() > 50)&&(dernierCoupJoue==i)))
+            // Si c'est pas a nous : go // si c'est a nous on verifie que =/ dernier coup
+            if (board.getPlayerHoles () [i] != 0 &&
+                    ((this.player!=board.getCurrentPlayer()) || !((board.getNbSeeds() > 40)&&(dernierCoupJoue==i))))
             {
                 /* Sélection du coup à jouer */
                 double [] decision = new double [Board.NB_HOLES];
@@ -64,9 +66,15 @@ public abstract class AlakazamNode
                         if (depth < awele.bot.Alakazam.AlakazamNode.maxDepth)
                         {
                             /* On construit le noeud suivant */
-                            awele.bot.Alakazam.AlakazamNode child = this.getNextNode (copy, depth + 1, alpha, beta, i);
-                            /* On récupère l'évaluation du noeud fils */
-                            this.decision [i] = child.getEvaluation ();
+                            if (this.player!=board.getCurrentPlayer()) {
+                                awele.bot.Alakazam.AlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, DernierCoupJoue);
+                                /* On récupère l'évaluation du noeud fils */
+                                this.decision [i] = child.getEvaluation ();}
+                            else {
+                                awele.bot.Alakazam.AlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, i);
+                                /* On récupère l'évaluation du noeud fils */
+                                this.decision [i] = child.getEvaluation ();
+                            }
                         }
                         /* Sinon (si la profondeur maximale est atteinte), on évalue la situation actuelle */
                         else {
@@ -124,7 +132,7 @@ public abstract class AlakazamNode
         private double Stratege(int i, Board board){
             int [] trouJoueur = board.getPlayerHoles();
             /** En milieu de partie, strategie du Krou **/
-            if (board.getNbSeeds() > 22) {
+            if (board.getNbSeeds() > 22 && board.getNbSeeds() < 40) {
                 /** Si un Krou est valide est permet de scorer, on joue ce trou peu importe la situation des autres **/
                 try {
                     Board test = (Board) board.clone();
@@ -133,13 +141,11 @@ public abstract class AlakazamNode
                         if (board.getCurrentPlayer()== AlakazamNode.player) {
                             return 1000 + i;
                         }
-                        else return 0;
                     }
                 } catch (InvalidBotException e) {}
-                return BourrinosShiny(i, board);
             }
             /** En fin de partie, on ne cherche qu'a joué des coups qui nous permettent de scorer **/
-            else return BourrinosShiny(i,board);
+            return BourrinosShiny(i,board);
             }
 
     /**

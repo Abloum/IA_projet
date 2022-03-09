@@ -122,7 +122,7 @@ public abstract class AlakazamShinyNode
         private double Stratege(int i, Board board){
             int [] trouJoueur = board.getPlayerHoles();
             /** En milieu de partie, strategie du Krou **/
-            if (board.getNbSeeds() > 22) {
+            if (board.getNbSeeds() > 22 && board.getNbSeeds() < 40) {
                 /** Si un Krou est valide est permet de scorer, on joue ce trou peu importe la situation des autres **/
                 try {
                     Board test = (Board) board.clone();
@@ -131,7 +131,6 @@ public abstract class AlakazamShinyNode
                         if (board.getCurrentPlayer()== AlakazamShinyNode.player) {
                             return 1000 + i;
                         }
-                        else return 0;
                     }
                 } catch (InvalidBotException e) {}
                 return BourrinosShiny(i, board);
