@@ -9,12 +9,12 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class RelicanthBot extends CompetitorBot
+public class RelicanthBot extends DemoBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 100;
 
-    private static final int BUDGET = 45000;
+    private static final int BUDGET = 46000;
 	
     /**
      * @throws InvalidBotException

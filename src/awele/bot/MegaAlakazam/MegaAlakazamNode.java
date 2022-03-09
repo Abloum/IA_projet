@@ -12,9 +12,6 @@ public abstract class MegaAlakazamNode
     /** Numéro de joueur de l'IA */
     private static int player;
 
-    /** Profondeur maximale */
-    private static int maxDepth;
-
     /** L'évaluation du noeud */
     private double evaluation;
 
@@ -74,7 +71,7 @@ public abstract class MegaAlakazamNode
                     else
                     {
                         /* Si la profondeur maximale n'est pas atteinte */
-                        if (depth < MegaAlakazamNode.maxDepth && budget >= 0)
+                        if (budget >= 0)
                         {
                             /* On construit le noeud suivant en fonction de qui joue pour garder le dernier coup joué */
                             if (this.player!=board.getCurrentPlayer()) {
@@ -114,9 +111,8 @@ public abstract class MegaAlakazamNode
     /**
      * Initialisation
      */
-    protected static void initialize (Board board, int maxDepth)
+    protected static void initialize (Board board)
     {
-        MegaAlakazamNode.maxDepth = maxDepth;
         MegaAlakazamNode.player = board.getCurrentPlayer ();
     }
 

@@ -12,7 +12,7 @@ import awele.core.InvalidBotException;
 public class AlakazamShinyBot extends CompetitorBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 6 ;
+    private static final int MAX_DEPTH = 5 ;
 
     /**
      * @throws InvalidBotException

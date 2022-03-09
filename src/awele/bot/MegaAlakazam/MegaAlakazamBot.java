@@ -9,10 +9,8 @@ import awele.core.InvalidBotException;
  * @author Abraham Giuliani
  * Bot qui prend ses décisions selon MinMax et Stratege
  */
-public class MegaAlakazamBot extends DemoBot
+public class MegaAlakazamBot extends CompetitorBot
 {
-    /** Profondeur maximale */
-    private static final int MAX_DEPTH = 100;
 
     private static final int BUDGET = 45000;
 
@@ -22,7 +20,7 @@ public class MegaAlakazamBot extends DemoBot
     public MegaAlakazamBot () throws InvalidBotException
     {
         this.setBotName ("MegaAlakazam");
-        this.addAuthor ("Abraham Giuliani");
+        this.addAuthor ("Abraham Giuliani Camille Masson");
     }
 
     /**
@@ -47,7 +45,7 @@ public class MegaAlakazamBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     {
-        MegaAlakazamNode.initialize (board, MegaAlakazamBot.MAX_DEPTH);
+        MegaAlakazamNode.initialize (board);
         return new MaxNode(board, MegaAlakazamBot.BUDGET).getDecision ();
     }
 
