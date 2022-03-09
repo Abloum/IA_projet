@@ -14,7 +14,7 @@ public class MaxNode extends MegaAlakazamNode
      */
     MaxNode (Board board, int budget)
     {
-        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, budget, -1);
+        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, -1, budget);
     }
 
     /**

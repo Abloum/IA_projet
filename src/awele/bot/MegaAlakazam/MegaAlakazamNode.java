@@ -33,7 +33,7 @@ public abstract class MegaAlakazamNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public MegaAlakazamNode (Board board, int depth, double alpha, double beta, int budget, int dernierCoupJoue)
+    public MegaAlakazamNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue, int budget)
     {
         int nbPossib = 0;
         for (int i = 0; i < Board.NB_HOLES; i++){
@@ -76,11 +76,11 @@ public abstract class MegaAlakazamNode
                         {
                             /* On construit le noeud suivant */
                             if (this.player!=board.getCurrentPlayer()) {
-                                awele.bot.MegaAlakazam.MegaAlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, budget, DernierCoupJoue);
+                                awele.bot.MegaAlakazam.MegaAlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, DernierCoupJoue, budget);
                                 /* On récupère l'évaluation du noeud fils */
                                 this.decision [i] = child.getEvaluation ();}
                             else {
-                                awele.bot.MegaAlakazam.MegaAlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, budget, i);
+                                awele.bot.MegaAlakazam.MegaAlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, i, budget);
                                 /* On récupère l'évaluation du noeud fils */
                                 this.decision [i] = child.getEvaluation ();
                             }
