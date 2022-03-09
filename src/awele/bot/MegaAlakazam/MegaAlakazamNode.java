@@ -72,7 +72,7 @@ public abstract class MegaAlakazamNode
                     else
                     {
                         /* Si la profondeur maximale n'est pas atteinte */
-                        if (depth < MegaAlakazamNode.maxDepth)
+                        if (depth < MegaAlakazamNode.maxDepth && budget >= 0)
                         {
                             /* On construit le noeud suivant */
                             if (this.player!=board.getCurrentPlayer()) {
