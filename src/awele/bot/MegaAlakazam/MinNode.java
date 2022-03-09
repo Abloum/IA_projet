@@ -12,9 +12,9 @@ public class MinNode extends MegaAlakazamNode
      * Constructeur pour un noeud initial
      * @param board La situation de jeu pour laquelle il faut prendre une décision
      */
-    MinNode (Board board)
+    MinNode (Board board, int dernierCoupJoue, int budget)
     {
-        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, -1);
+        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, dernierCoupJoue, budget);
     }
 
     /**
@@ -24,9 +24,9 @@ public class MinNode extends MegaAlakazamNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    MinNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
+    MinNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue, int budget)
     {
-        super (board, depth, alpha, beta, DernierCoupJoue);
+        super (board, depth, alpha, beta, dernierCoupJoue, budget);
     }
 
     /**
@@ -64,9 +64,9 @@ public class MinNode extends MegaAlakazamNode
      * @return Un noeud MaxNode du niveau suivant
      */
     @Override
-    protected MegaAlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue)
+    protected MegaAlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue, int budget)
     {
-        return new MaxNode(board, depth, alpha, beta, DernierCoupJoue);
+        return new MaxNode(board, depth, alpha, beta, dernierCoupJoue, budget);
     }
 
     /**

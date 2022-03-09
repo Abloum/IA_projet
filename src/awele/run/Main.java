@@ -29,10 +29,10 @@ public final class Main extends OutputWriter
     
     private static final String LOG_FILE = "awele.log";
     private static final String ANONYMOUS_LOG_FILE = "awele.anonymous.log";
-    private static final int NB_RUNS = 100;
-    //private static final int NB_RUNS = 1;
+    //private static final int NB_RUNS = 100;
+    private static final int NB_RUNS = 5;
     private static final int MAX_LEARNING_TIME = 1000 * 60 * 60 * 1; // 1 h
-    private static final int MAX_DECISION_TIME = 100; // 100 ms
+    private static final int MAX_DECISION_TIME = 250; // 100 ms
     private static final int MAX_MEMORY = 1024 * 1024 * 64; // 64 MiB
     private static final int MAX_TOTAL_MEMORY = 1024 * 1024 * 1024; // 1 GiB
 

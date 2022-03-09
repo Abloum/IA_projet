@@ -14,7 +14,7 @@ import awele.core.InvalidBotException;
 public class AlakazamBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 3;
+    private static final int MAX_DEPTH = 6;
 
     /**
      * @throws InvalidBotException

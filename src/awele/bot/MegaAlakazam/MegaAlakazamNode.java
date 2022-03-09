@@ -18,8 +18,13 @@ public abstract class MegaAlakazamNode
     /** L'évaluation du noeud */
     private double evaluation;
 
+    private int DernierCoupJoue;
+
     /** Évaluation des coups selon MinMax */
     private double [] decision;
+
+    /** Buget de la recherche **/
+    private static final int PERTE = 12;
 
     /**
      * Constructeur...
@@ -28,8 +33,16 @@ public abstract class MegaAlakazamNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public MegaAlakazamNode (Board board, int depth, double alpha, double beta, int dernierCoupJoue)
+    public MegaAlakazamNode (Board board, int depth, double alpha, double beta, int budget, int dernierCoupJoue)
     {
+        int nbPossib = 0;
+        for (int i = 0; i < Board.NB_HOLES; i++){
+            if (board.getPlayerHoles()[i] != 0)
+                nbPossib ++;
+        }
+        budget -= PERTE;
+        budget /= nbPossib;
+
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'évaluation courante */
@@ -37,7 +50,8 @@ public abstract class MegaAlakazamNode
         /* On parcourt toutes les coups possibles */
         for (int i = 0; i < Board.NB_HOLES; i++)
             /* Si le coup est jouable */
-            if (board.getPlayerHoles () [i] != 0 && !((board.getNbSeeds() > 50)&&(dernierCoupJoue==i)))
+            if (board.getPlayerHoles () [i] != 0 &&
+                    ((this.player!=board.getCurrentPlayer()) || !((board.getNbSeeds() > 40)&&(dernierCoupJoue==i))))
             {
                 /* Sélection du coup à jouer */
                 double [] decision = new double [Board.NB_HOLES];
@@ -61,9 +75,15 @@ public abstract class MegaAlakazamNode
                         if (depth < MegaAlakazamNode.maxDepth)
                         {
                             /* On construit le noeud suivant */
-                            MegaAlakazamNode child = this.getNextNode (copy, depth + 1, alpha, beta, i);
-                            /* On récupère l'évaluation du noeud fils */
-                            this.decision [i] = child.getEvaluation ();
+                            if (this.player!=board.getCurrentPlayer()) {
+                                awele.bot.MegaAlakazam.MegaAlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, budget, DernierCoupJoue);
+                                /* On récupère l'évaluation du noeud fils */
+                                this.decision [i] = child.getEvaluation ();}
+                            else {
+                                awele.bot.MegaAlakazam.MegaAlakazamNode child = this.getNextNode(copy, depth + 1, alpha, beta, budget, i);
+                                /* On récupère l'évaluation du noeud fils */
+                                this.decision [i] = child.getEvaluation ();
+                            }
                         }
                         /* Sinon (si la profondeur maximale est atteinte), on évalue la situation actuelle */
                         else {
@@ -193,7 +213,7 @@ public abstract class MegaAlakazamNode
      * @param beta Le seuil pour la coupe beta
      * @return Un noeud (MinNode ou MaxNode) du niveau suivant
      */
-    protected abstract MegaAlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue);
+    protected abstract MegaAlakazamNode getNextNode (Board board, int depth, double alpha, double beta, int DernierCoupJoue, int budget);
 
     /**
      * L'évaluation du noeud
