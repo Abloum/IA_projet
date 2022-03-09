@@ -1,4 +1,4 @@
-package awele.bot.AlakazamShiny;
+package awele.bot.Relicanth;
 
 import awele.bot.CompetitorBot;
 import awele.bot.DemoBot;
@@ -6,21 +6,23 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Abraham Giuliani
- * Bot qui prend ses décisions selon MinMax et Stratege
+ * @author Alexandre Blansché
+ * Bot qui prend ses décisions selon le MinMax
  */
-public class AlakazamShinyBot extends DemoBot
+public class RelicanthBot extends CompetitorBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 3 ;
+    private static final int MAX_DEPTH = 100;
 
+    private static final int BUDGET = 45000;
+	
     /**
      * @throws InvalidBotException
      */
-    public AlakazamShinyBot () throws InvalidBotException
+    public RelicanthBot() throws InvalidBotException
     {
-        this.setBotName ("AlakazamShiny");
-        this.addAuthor ("Abraham Giuliani");
+        this.setBotName ("Relicanth");
+        this.addAuthor ("Masson Camille");
     }
 
     /**
@@ -45,8 +47,8 @@ public class AlakazamShinyBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     {
-        AlakazamShinyNode.initialize (board, AlakazamShinyBot.MAX_DEPTH);
-        return new MaxNode(board).getDecision ();
+        RelicanthNode.initialize (board, RelicanthBot.MAX_DEPTH);
+        return new MaxNode(board, RelicanthBot.BUDGET).getDecision ();
     }
 
     /**

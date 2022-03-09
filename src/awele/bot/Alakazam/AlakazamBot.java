@@ -3,6 +3,7 @@ package awele.bot.Alakazam;
 import awele.bot.Alakazam.AlakazamNode;
 import awele.bot.Alakazam.MaxNode;
 import awele.bot.CompetitorBot;
+import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -10,7 +11,7 @@ import awele.core.InvalidBotException;
  * @author Abraham Giuliani
  * Bot qui prend ses décisions selon MinMax et Stratege
  */
-public class AlakazamBot extends CompetitorBot
+public class AlakazamBot extends DemoBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 3;
